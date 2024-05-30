@@ -1,0 +1,27 @@
+server:
+    port: 9090
+spring:
+    cloud:
+        gateway:
+            default-filters:
+            - TokenRelay
+            routes:
+            -   id: hello-service
+                predicates:
+                - Path=/hello/**
+                uri: http://localhost:8086
+    security:
+        oauth2:
+            client:
+                provider:
+                    keycloak-test:
+                        issuer-uri: http://localhost:8080/realms/dh
+                registration:
+                    keycloak-test:
+                        authorization-grant-type: authorization_code
+                        client-id: api-gateway-client
+                        client-secret: eBfyXrx0ouO8vcKBTilhwpw9joNDJOHF
+#                        provider: api-gateway-service
+                        redirect-uri: http://localhost:9090/login/oauth2/code/keycloak
+                        scope:
+                            - openid
