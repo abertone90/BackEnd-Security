@@ -40,9 +40,9 @@ VALUES
   (4, 5);
 
 --Modificar las secuencias de producto_seq
-UPDATE producto_sql
-SET next_val = 6;
+--UPDATE producto_sql
+--SET next_val = 6;
 
 --Modificar las secuencias de venta_seq
-UPDATE venta_seq
-SET next_val = 6;
+--UPDATE venta_seq
+--SET next_val = 6;
