@@ -4,18 +4,23 @@ spring:
     cloud:
         gateway:
             default-filters:
-            - TokenRelay
+                - TokenRelay
             routes:
-            -   id: hello-service
-                predicates:
-                - Path=/hello/**
-                uri: http://localhost:8086
+                -   id: productos
+                    predicates:
+                        - Path=/productos/**
+                    uri: http://localhost:8086
+                -   id: ventas
+                    predicates:
+                        - Path=/ventas/**
+                    uri: http://localhost:8086
+
     security:
         oauth2:
             client:
                 provider:
                     keycloak-test:
-                        issuer-uri: http://localhost:8080/realms/dh
+                        issuer-uri: http://localhost:8080/realms/el-aparato-bertone
                 registration:
                     keycloak-test:
                         authorization-grant-type: authorization_code

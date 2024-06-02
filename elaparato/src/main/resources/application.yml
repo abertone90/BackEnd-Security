@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/elaparato?serverTimezone=UTC
+    username: dani
+    password: 1234
+  sql:
+    init:
+      mode: always
+  application:
+    name: elaparato
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/el-aparato-bertone
+server:
+  port: 8086
