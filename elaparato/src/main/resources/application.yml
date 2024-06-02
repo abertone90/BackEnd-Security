@@ -18,5 +18,13 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8080/realms/el-aparato-bertone
+
 server:
   port: 8086
+
+el-aparato:
+  keycloak:
+    serverUrl: http://localhost:8080
+    realm: el-aparato-bertone
+    clientId: api-internal-users-client
+    clientSecret: IGmUE4iYvz7QuT9xs1HctUcj1jUuiRIJ
