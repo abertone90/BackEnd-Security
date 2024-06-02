@@ -1,0 +1,11 @@
+Roles creados a ambos niveles , realm and client.
+
+Roles creados:
+Administrador
+Vendedor
+Repositor
+
+Usuarios creados:
+administrador
+vendedor
+repositor
